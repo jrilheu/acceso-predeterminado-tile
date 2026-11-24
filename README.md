@@ -12,34 +12,37 @@ Es un acceso directo; no cambia ningún valor predeterminado por código.
 
 ## Abrir y compilar en Android Studio
 
-1. Abre Android Studio → **File → Open** → selecciona esta carpeta:
-   `C:\Sources\Android\acceso-predeterminado-tile`
+1. Clona o abre este repositorio en Android Studio (**File → Open** → raíz del proyecto / `<project-root>`).
 2. Espera a que Gradle sincronice.
 3. Conecta un dispositivo con depuración USB o inicia un emulador.
 4. Pulsa **Run** (▶) o genera el APK de depuración:
    - Menú **Build → Build Bundle(s) / APK(s) → Build APK(s)**
-5. Desde terminal (opcional):
+5. Desde terminal (opcional), en `<project-root>`:
 
-```bat
-cd C:\Sources\Android\acceso-predeterminado-tile
-set JAVA_HOME=C:\Users\jilhe\.jdks\jbr-21.0.11
+```bash
+# Linux / macOS
+./gradlew assembleDebug
+
+# Windows
 gradlew.bat assembleDebug
 ```
 
-El APK queda en `app\build\outputs\apk\debug\app-debug.apk`.
+El APK queda en `app/build/outputs/apk/debug/app-debug.apk`.
 
 ## APK release (privado / sideload)
 
-1. Asegura `keystore.properties` y el `.jks` en la raíz (no van a git; hay `keystore.properties.example`).
-2. Compila el APK firmado:
+1. Asegura `keystore.properties` y el `.jks` en la raíz del proyecto (no van a git; hay `keystore.properties.example`).
+2. Compila el APK firmado desde `<project-root>`:
 
-```bat
-cd C:\Sources\Android\acceso-predeterminado-tile
-set JAVA_HOME=C:\Users\jilhe\.jdks\jbr-21.0.11
+```bash
+# Linux / macOS
+./gradlew assembleRelease
+
+# Windows
 gradlew.bat assembleRelease
 ```
 
-3. El APK queda en `app\build\outputs\apk\release\app-release.apk`.
+3. El APK queda en `app/build/outputs/apk/release/app-release.apk`.
 4. Cópialo al teléfono e instálalo (permite «Instalar apps desconocidas» si Android lo pide).
 5. Si ya tenías la versión debug con el mismo `applicationId`, desinstálala antes: la firma es distinta.
 
