@@ -13,7 +13,7 @@ Es un acceso directo; no cambia ningún valor predeterminado por código.
 ## Abrir y compilar en Android Studio
 
 1. Abre Android Studio → **File → Open** → selecciona esta carpeta:
-   `C:\Sources\Android\acceso-predeterminado-app`
+   `C:\Sources\Android\acceso-predeterminado-tile`
 2. Espera a que Gradle sincronice.
 3. Conecta un dispositivo con depuración USB o inicia un emulador.
 4. Pulsa **Run** (▶) o genera el APK de depuración:
@@ -21,7 +21,7 @@ Es un acceso directo; no cambia ningún valor predeterminado por código.
 5. Desde terminal (opcional):
 
 ```bat
-cd C:\Sources\Android\acceso-predeterminado-app
+cd C:\Sources\Android\acceso-predeterminado-tile
 set JAVA_HOME=C:\Users\jilhe\.jdks\jbr-21.0.11
 gradlew.bat assembleDebug
 ```
@@ -34,7 +34,7 @@ El APK queda en `app\build\outputs\apk\debug\app-debug.apk`.
 2. Compila el APK firmado:
 
 ```bat
-cd C:\Sources\Android\acceso-predeterminado-app
+cd C:\Sources\Android\acceso-predeterminado-tile
 set JAVA_HOME=C:\Users\jilhe\.jdks\jbr-21.0.11
 gradlew.bat assembleRelease
 ```
